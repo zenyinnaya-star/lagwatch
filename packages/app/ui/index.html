@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'">
+<title>Lagwatch</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <nav aria-label="Main">
+    <div class="brand"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h5l3-7 4 14 3-7h5"/></svg><span>Lagwatch</span></div>
+    <a href="#dashboard" data-route="dashboard">Dashboard</a>
+    <a href="#rules" data-route="rules">Alert rules</a>
+    <a href="#reports" data-route="reports">Evidence reports</a>
+    <a href="#tools" data-route="tools">Tools</a>
+    <a href="#setup" data-route="setup">Plan and setup</a>
+    <div class="nav-foot"><div class="status"><span class="dot" id="monDot"></span><span id="monText">Monitoring</span></div><div class="muted small">Everything stays on this computer.</div></div>
+  </nav>
+  <main id="root" class="first" aria-live="polite"><p class="muted">Loading…</p></main>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

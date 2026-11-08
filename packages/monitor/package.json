@@ -1,0 +1,1 @@
+{"name":"@lagwatch/monitor","version":"0.1.0","type":"module","main":"src/index.ts","dependencies":{"@lagwatch/core":"*","better-sqlite3-multiple-ciphers":"^13.0.3"}}

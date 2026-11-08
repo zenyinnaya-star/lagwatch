@@ -1,0 +1,28 @@
+import { contextBridge, ipcRenderer } from "electron";
+
+contextBridge.exposeInMainWorld("lagwatch", {
+  dashboard: () => ipcRenderer.invoke("dashboard"),
+  setPreset: (name: string) => ipcRenderer.invoke("setPreset", name),
+  setSpeedTests: (enabled: boolean) => ipcRenderer.invoke("setSpeedTests", enabled),
+  speedTest: () => ipcRenderer.invoke("speedTest"),
+  settings: () => ipcRenderer.invoke("settings"),
+  setRules: (rules: unknown) => ipcRenderer.invoke("setRules", rules),
+  setNotify: (n: unknown) => ipcRenderer.invoke("setNotify", n),
+  onAlertSound: (cb: (d: unknown) => void) => ipcRenderer.on("alert-sound", (_e, d) => cb(d)),
+  bufferbloat: () => ipcRenderer.invoke("bufferbloat"),
+  natCheck: () => ipcRenderer.invoke("natCheck"),
+  complaint: (b: unknown) => ipcRenderer.invoke("complaint", b),
+  setup: (v: unknown) => ipcRenderer.invoke("setup", v),
+  setMlab: (on: boolean) => ipcRenderer.invoke("setMlab", on),
+  mlabTest: () => ipcRenderer.invoke("mlabTest"),
+  heatmap: (tz: number) => ipcRenderer.invoke("heatmap", tz),
+  setGameTargets: (t: unknown) => ipcRenderer.invoke("setGameTargets", t),
+  gamePing: () => ipcRenderer.invoke("gamePing"),
+  wifiDoctor: () => ipcRenderer.invoke("wifiDoctor"),
+  credit: (price: number) => ipcRenderer.invoke("credit", price),
+  markRestart: () => ipcRenderer.invoke("markRestart"),
+  restartCheck: () => ipcRenderer.invoke("restartCheck"),
+  wifi: () => ipcRenderer.invoke("wifi"),
+  welcome: (v: unknown) => ipcRenderer.invoke("welcome", v),
+  report: () => ipcRenderer.invoke("report"),
+});
